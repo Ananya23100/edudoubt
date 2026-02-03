@@ -1,12 +1,273 @@
-body {
+* {
   margin: 0;
-  font-family: "Roboto", sans-serif;
-  background: linear-gradient(135deg, #e3f2fd, #ffffff);
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  color: #2c3e50;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+}
+
+#root {
+  min-height: 100vh;
 }
 
 .center-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: #1a202c;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+/* Buttons - Material UI Override */
+.MuiButton-root {
+  text-transform: capitalize;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 10px 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.MuiButton-root:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.MuiButton-contained {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.MuiButton-contained:hover {
+  background: linear-gradient(135deg, #5568d3 0%, #673a91 100%);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.MuiButton-outlined {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.MuiButton-outlined:hover {
+  background-color: rgba(102, 126, 234, 0.08);
+  border-color: #764ba2;
+  color: #764ba2;
+}
+
+/* Cards - Material UI Override */
+.MuiCard-root {
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.MuiCard-root:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.MuiCardContent-root {
+  padding: 32px;
+}
+
+/* TextField - Material UI Override */
+.MuiTextField-root {
+  margin: 12px 0;
+}
+
+.MuiOutlinedInput-root {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.MuiOutlinedInput-root:hover fieldset {
+  border-color: #667eea;
+}
+
+.MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: #667eea;
+  border-width: 2px;
+}
+
+.MuiInputBase-input {
+  font-size: 0.95rem;
+  padding: 12px 14px;
+}
+
+.MuiInputLabel-root {
+  color: #718096;
+}
+
+.MuiInputLabel-root.Mui-focused {
+  color: #667eea;
+}
+
+/* Chip - Material UI Override */
+.MuiChip-root {
+  border-radius: 8px;
+  font-weight: 500;
+  height: 32px;
+}
+
+.MuiChip-colorSuccess {
+  background-color: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.MuiChip-colorWarning {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.MuiChip-colorPrimary {
+  background-color: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+}
+
+/* Alert - Material UI Override */
+.MuiAlert-root {
+  border-radius: 8px;
+  border: none;
+  margin: 12px 0;
+}
+
+.MuiAlert-standardError {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.MuiAlert-standardSuccess {
+  background-color: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+/* Typography - Material UI Override */
+.MuiTypography-h4 {
+  color: #1a202c;
+  font-weight: 700;
+}
+
+.MuiTypography-h5 {
+  color: #1a202c;
+  font-weight: 600;
+}
+
+.MuiTypography-body1,
+.MuiTypography-body2 {
+  color: #4a5568;
+}
+
+/* Link styling */
+a {
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #764ba2;
+}
+
+/* Selection styling */
+::selection {
+  background-color: #667eea;
+  color: white;
+}
+
+::-moz-selection {
+  background-color: #667eea;
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .center-container {
+    padding: 16px;
+    min-height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .MuiCard-root {
+    max-width: 100%;
+  }
+
+  .MuiCardContent-root {
+    padding: 24px 16px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
 }

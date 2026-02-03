@@ -37,6 +37,16 @@ const doubtSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
     default: null
+  },
+
+  discussionEnded: {
+    type: Boolean,
+    default: false
+  },
+
+  discussionEndedAt: {
+    type: Date,
+    default: null
   }
 
 }, { timestamps: true });

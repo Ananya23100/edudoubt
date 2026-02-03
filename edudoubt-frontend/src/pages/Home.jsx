@@ -14,6 +14,7 @@ function Home() {
           </Typography>
 
           {role === "student" && (
+            <>
             <Button
               variant="contained"
               size="large"
@@ -21,6 +22,14 @@ function Home() {
             >
               Ask a Doubt
             </Button>
+                         <Button
+      variant="outlined"
+      size="large"
+      onClick={() => navigate("/my-doubts")}
+    >
+      My Doubts
+    </Button>
+    </>
           )}
 
           {role === "teacher" && (

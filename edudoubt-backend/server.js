@@ -18,6 +18,8 @@ const doubtRoutes = require("./routes/doubts");
 app.use("/api/doubts", doubtRoutes);
 const courseRoutes = require("./routes/courses");
 app.use("/api/courses", courseRoutes);
+const conversationRoutes = require("./routes/conversations");
+app.use("/api/conversations", conversationRoutes);
 
 
 

@@ -5,6 +5,10 @@ import Home from "./pages/Home";
 import AskDoubt from "./pages/AskDoubt";
 import TeacherDashboard from "./pages/TeacherDashboard";
 
+import MyDoubts from "./pages/MyDoubts";
+import DoubtDiscussion from "./pages/DoubtDiscussion";
+
+
 
 
 
@@ -17,6 +21,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/home" element={<Home />} />
         <Route path="/ask-doubt" element={<AskDoubt />} />
+        <Route path="/my-doubts" element={<MyDoubts />} />
+        <Route path="/discussion/:doubtId" element={<DoubtDiscussion />} />
         
 <Route path="/teacher-doubts" element={<TeacherDashboard />} />
       </Routes>
